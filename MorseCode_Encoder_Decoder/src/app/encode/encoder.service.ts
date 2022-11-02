@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 const A = 'A'.charCodeAt(0);
+const textToConvertRegex = /^[A-Z ]+$/;
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,11 @@ export class EncoderService {
 
   public getValue():string{
       return this.encodedMorsecode;
+  }
+
+  public canEncode(textToConvert: string): boolean {
+    // This sample uses RegEx, other solutions are possible
+    return textToConvertRegex.test(textToConvert);
   }
 
   public encodeMorseCode():void{

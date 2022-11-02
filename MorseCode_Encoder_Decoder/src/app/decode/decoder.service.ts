@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 const A = 'A'.charCodeAt(0);
+const morseToConvertRegex = /^[.\-\/ ]+$/;
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,10 @@ alphabet:string[] = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 
   public getValue():string{
     return this.decodedMorsecode;
+  }
+
+  public canDecode(morseToConvert: string): boolean {
+    return morseToConvertRegex.test(morseToConvert);
   }
 
   public decodeMorseCode():void{

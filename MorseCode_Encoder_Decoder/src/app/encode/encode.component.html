@@ -1,11 +1,13 @@
-<form>
-  <div>
-    <label> Text to Encode
-      <input type="encode" id="textToEncode" name="encode" [(ngModel)]="encoder.morseCodeToEncode"/>
-    </label>
-    <label> Encoded Text
-      <input type="text" id="textToEncode" readonly [value]="encoder.getValue()" class="form-control mb-2" />
-    </label>
-  </div>
-  <button type="button" (click)="encoder.encodeMorseCode()">Encode</button>
-</form>
+<div class="container">
+  <form>
+    <div>
+      <label> Text to Encode
+        <input class="form-control mb-2" type="encode" id="textToEncode" name="encode" [(ngModel)]="encoder.morseCodeToEncode"/>
+      </label>
+      <label> Encoded Text
+        <input class="form-control mb-2" type="text" id="textToEncode" readonly [value]="encoder.getValue()"  />
+      </label>
+    </div>
+    <button class="btn btn-dark" type="button" (click)="encoder.encodeMorseCode()" [disabled]="!encoder.canEncode(encoder.morseCodeToEncode)">Encode</button>
+  </form>
+</div>
