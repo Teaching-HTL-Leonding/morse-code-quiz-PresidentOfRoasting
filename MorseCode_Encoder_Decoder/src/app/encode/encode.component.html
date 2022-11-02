@@ -1,11 +1,11 @@
 <form>
   <div>
     <label> Text to Encode
-      <input type="encode" id="textToEncode" name="encode"/>
+      <input type="encode" id="textToEncode" name="encode" [(ngModel)]="encoder.morseCodeToEncode"/>
     </label>
     <label> Encoded Text
-      <input readonly [value]=""/>
+      <input type="text" id="textToEncode" readonly [value]="encoder.getValue()"/>
     </label>
   </div>
-  <button type="button">Encode</button>
+  <button type="button" (click)="encoder.encodeMorseCode()">Encode</button>
 </form>

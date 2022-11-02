@@ -1,11 +1,11 @@
 <form>
   <div>
     <label> Text to Decode:
-      <input type="text" id="textToDecode" name="decode"/>
+      <input type="text" id="textToDecode" name="decode" [(ngModel)]="decoder.morseCodeToDecode"/>
     </label>
     <label> Decoded Text:
-      <input type="text" id="textToDecode" name="decode" readonly/>
+      <input type="text" id="textToDecode" name="decode" readonly [value]="decoder.getValue()"/>
     </label>
   </div>
-  <button type="button" >Decode</button>
+  <button type="button" (click)="decoder.decodeMorseCode()" >Decode</button>
 </form>

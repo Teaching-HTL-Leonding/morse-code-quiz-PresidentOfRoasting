@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EncoderService } from '../encoder.service';
+import { EncoderService } from '../encode/encoder.service';
 
 @Component({
   selector: 'app-encode',
@@ -13,7 +13,4 @@ export class EncodeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public morseCode():string{
-    return this.encoder.getValue();
-  }
 }
