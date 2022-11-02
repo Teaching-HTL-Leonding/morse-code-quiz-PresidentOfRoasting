@@ -4,7 +4,7 @@
       <input type="encode" id="textToEncode" name="encode" [(ngModel)]="encoder.morseCodeToEncode"/>
     </label>
     <label> Encoded Text
-      <input type="text" id="textToEncode" readonly [value]="encoder.getValue()"/>
+      <input type="text" id="textToEncode" readonly [value]="encoder.getValue()" class="form-control mb-2" />
     </label>
   </div>
   <button type="button" (click)="encoder.encodeMorseCode()">Encode</button>
